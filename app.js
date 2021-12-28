@@ -1,6 +1,6 @@
 const keyboard = document.getElementById('qwerty');
 const getPhrase = document.getElementById('phrase');
-const startGame = document.querySelector('.btn_reset');
+const startGame = document.querySelector('.btn__reset');
 
 let missed = 0;
 
@@ -48,7 +48,7 @@ function getRandomPhraseArray(arr) {
     }
   }
 
-    const randomDisplay = addPhraseToDisplay(randomPhrase);
+    const randomDisplay = getRandomPhraseArray(randomPhrase);
 
 // Create a checkLetter function //
 
