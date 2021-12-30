@@ -52,13 +52,13 @@ function getRandomPhraseArray(arr) {
 
 // Create a checkLetter function //
 
-function checkLetter = (button) => {
+function checkLetter(button) {
   const letterLi = document.querySelectorAll('li');
   let match = null;
 
-  for( let i = 0; i < checkLetter.length; i ++) {
-    if ( button === checkLetter[i].textContent ) {
-      checkLetter[i].classList.add("show");
+  for( let i = 0; i < letterLi.length; i ++) {
+    if ( button === letterLi[i].textContent ) {
+      letterLi[i].classList.add("show");
       match = button.textContent;
 
     }
