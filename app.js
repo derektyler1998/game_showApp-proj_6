@@ -52,7 +52,7 @@ function getRandomPhraseArray(arr) {
 
 // Create a checkLetter function //
 
-function checkLetter(button) {
+function checkLetter = (button) => {
   const letterLi = document.querySelectorAll('li');
   let match = null;
 
