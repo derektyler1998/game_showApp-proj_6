@@ -40,7 +40,7 @@ function getRandomPhraseArray(arr) {
       ul.appendChild(li);
 
       // Create an else-if variable for characters inside the array//
-      if(arr[i] === " ") {
+      if(arr[i] === "") {
         li.className = "letter";
       } else {
         li.className = "space";
