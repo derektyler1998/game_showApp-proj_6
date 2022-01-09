@@ -48,7 +48,8 @@ function getRandomPhraseArray(arr) {
     }
   }
 
-   addPhraseToDisplay(phrases);
+   const randomPhrase = getRandomPhraseArray(phrases);
+   addPhraseToDisplay(randomPhrase);
 
 // Create a checkLetter function //
 
