@@ -1,6 +1,6 @@
 const keyboard = document.getElementById('qwerty');
 const getPhrase = document.getElementById('phrase');
-const startGame = document.querySelector('.btn_reset');
+const startGame = document.querySelector('.btn__reset');
 const overlay = document.getElementById('overlay')
 
 let missed = 0;
