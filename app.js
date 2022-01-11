@@ -41,9 +41,9 @@ function getRandomPhraseArray(arr) {
 
       // Create an else-if variable for characters inside the array//
       if(arr[i] === " ") {
-        li.className = "letter";
-      } else {
         li.className = "space";
+      } else {
+        li.className = "letter";
       }
     }
   }
