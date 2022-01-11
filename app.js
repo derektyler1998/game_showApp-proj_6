@@ -70,8 +70,8 @@ function checkLetter(button) {
 
 //Add event listener to the keyboard that targets the on screen keyboard and not the physical keyboard//
 
-qwerty.addEventListener('click', (e) => {
-  if ( button.tagName === 'BUTTON' || event.target.className === 'chosen' ) {
+qwerty.addEventListener('click', (event) => {
+  if ( event.tagName === 'BUTTON' || event.target.className === 'chosen' ) {
     const button = e.target;
     button.classList.add('chosen');
     button.setAttribute('disabled', '');
