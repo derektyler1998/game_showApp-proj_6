@@ -1,4 +1,4 @@
-const keyboard = document.getElementById('qwerty');
+const qwerty = document.getElementById('qwerty');
 const getPhrase = document.getElementById('phrase');
 const startGame = document.querySelector('.btn__reset');
 const overlay = document.getElementById('overlay')
@@ -71,7 +71,7 @@ function checkLetter(button) {
 //Add event listener to the keyboard that targets the on screen keyboard and not the physical keyboard//
 
 qwerty.addEventListener('click', (event) => {
-  if ( event.tagName === 'BUTTON' || event.target.className === 'chosen' ) {
+  if ( event.target.tagName === 'BUTTON' || event.target.className === 'chosen' ) {
     const button = event.target;
     button.classList.add('chosen');
     button.setAttribute('disabled', '');
