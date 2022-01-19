@@ -77,7 +77,7 @@ qwerty.addEventListener('click', (event) => {
     button.setAttribute('disabled', '');
     const letterCheck = checkLetter(button);
 
-    if (match === null) {
+    if (letterCheck === null) {
       missed++;
       const lives = document.querySelectorAll('.tries img');
       const lostLife = 5 - missed;
