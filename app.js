@@ -4,6 +4,7 @@ const startGame = document.querySelector('.btn__reset');
 const overlay = document.getElementById('overlay')
 
 let missed = 0;
+let resetGame = 0;
 
 // Create and declare five phrases and label them //
 
@@ -55,22 +56,23 @@ function getRandomPhraseArray(arr) {
 // Create a checkLetter function //
 
 function checkLetter(button) {
-  const letterLi = document.querySelectorAll('li');
-  let match = null;
+ const letterLi = document.querySelectorAll('li');
+ let match = null;
 
-  for( let i = 0; i < letterLi.length; i ++) {
-    if ( button === letterLi[i].textContent ) {
-      letterLi[i].classList.add("show");
-      match = button.textContent;
+ for( let i = 0; i < letterLi.length; i ++) {
+   if ( button.textContent === letterLi[i].textContent ) {
+     letterLi[i].classList.add("show");
+     match = button.textContent;
 
-    }
-  }
-  return match;
-};
+   }
+ }
+ return match;
+}
+
 
 //Add event listener to the keyboard that targets the on screen keyboard and not the physical keyboard//
 
-qwerty.addEventListener('click', (event) => {
+  qwerty.addEventListener('click', (event) => {
   if ( event.target.tagName === 'BUTTON' || event.target.className === 'chosen' ) {
     const button = event.target;
     button.classList.add('chosen');
@@ -84,7 +86,7 @@ qwerty.addEventListener('click', (event) => {
       lostLife.src = 'images/lostHeart.png';
     }
     else {
-      checkWin();
+      won();
     }
   }
 });
@@ -92,12 +94,12 @@ qwerty.addEventListener('click', (event) => {
 
 // Create a function if you win or lose //
 
-  function checkWin() {
+  function won() {
   const showed = document.querySelectorAll('.show');
   const phraseLetter = document.querySelectorAll('.letter');
   const title = document.querySelector('.title');
 
-  if(phraseLetter.length === showed.length) {
+  if (phraseLetter.length === showed.length) {
     overlay.style.display = 'flex';
     overlay.className = 'win';
     title.textContent = 'You won!';
@@ -114,7 +116,8 @@ qwerty.addEventListener('click', (event) => {
 
 function gameReset() {
   missed = 0;
-  ul.textContent = '';
+  resetGame = 0;
+/*  ul.textContent = '';*/
 
   const prevGame = document.querySelectorAll('.chosen');
   for(let i = 0; i < prevGame.length; i++) {
