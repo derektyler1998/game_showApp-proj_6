@@ -60,7 +60,7 @@ function checkLetter(button) {
  let match = null;
 
  for( let i = 0; i < letterLi.length; i ++) {
-   if ( button.textContent === letterLi[i].textContent ) {
+   if ( button.textContent === letterLi[i].textContent.toLowerCase() ) {
      letterLi[i].classList.add("show");
      match = button.textContent;
 
