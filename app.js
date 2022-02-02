@@ -1,7 +1,9 @@
 const qwerty = document.getElementById('qwerty');
 const getPhrase = document.getElementById('phrase');
 const startGame = document.querySelector('.btn__reset');
-const overlay = document.getElementById('overlay')
+const overlay = document.getElementById('overlay');
+const lives = document.querySelector('.tries');
+const lostLife = document.querySelector('.lost');
 
 let missed = 0;
 let resetGame = 0;
@@ -80,10 +82,10 @@ function checkLetter(button) {
     const letterCheck = checkLetter(button);
 
     if (letterCheck === null) {
+      const lost = document.querySelectorAll('.tries img')[missed];
+      lost.src='images/lostHeart.png';
+      lost.className = 'lost';
       missed++;
-      const lives = document.querySelectorAll('.tries img');
-      const lostLife = 5 - missed;
-      lostLife.src = 'images/lostHeart.png';
     }
     else {
       won();
@@ -103,12 +105,12 @@ function checkLetter(button) {
     overlay.style.display = 'flex';
     overlay.className = 'win';
     title.textContent = 'You won!';
-    gameReset()
-} else if (missed >= 5) {
+    gameReset();
+} else if (missed === 5) {
   overlay.className = 'lose';
   overlay.style.display = 'flex';
   title.textContent = 'Try again!';
-    gameReset()
+    gameReset();
   }
 }
 
@@ -117,13 +119,15 @@ function checkLetter(button) {
 function gameReset() {
   missed = 0;
   resetGame = 0;
-/*  ul.textContent = '';*/
+  const ul = document.querySelector("#phrase ul");
+  ul.textContent = '';
 
-  const prevGame = document.querySelectorAll('.chosen');
-  for(let i = 0; i < prevGame.length; i++) {
-    prevGame[i].classList.remove('chosen');
-    prevGame[i].disabled = false;
-  }
+  const chosenLetters = Array.from(document.querySelectorAll('.chosen'));
+  chosenLetters.forEach(function(letter) {
+    letter.classList.remove('chosen');
+    letter.disabled = false;
+  });
+
   const finalPhrase = getRandomPhraseArray(phrases);
   addPhraseToDisplay(finalPhrase);
 
@@ -133,3 +137,4 @@ function gameReset() {
     refillHearts[i].src = 'images/liveHeart.png';
   }
 }
+// Reset the phrases when game resets//
