@@ -96,7 +96,7 @@ function checkLetter(button) {
 
 // Create a function if you win or lose //
 
-  function won() {
+   function won() {
   const showed = document.querySelectorAll('.show');
   const phraseLetter = document.querySelectorAll('.letter');
   const title = document.querySelector('.title');
@@ -106,13 +106,17 @@ function checkLetter(button) {
     overlay.className = 'win';
     title.textContent = 'You won!';
     gameReset();
-} else if (missed === 5) {
+ }
+}
+function lost() {
+  if (missed === 5) {
   overlay.className = 'lose';
   overlay.style.display = 'flex';
   title.textContent = 'Try again!';
     gameReset();
   }
 }
+
 
 // Game reset //
 
