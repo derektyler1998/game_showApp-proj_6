@@ -2,8 +2,8 @@ const qwerty = document.getElementById('qwerty');
 const getPhrase = document.getElementById('phrase');
 const startGame = document.querySelector('.btn__reset');
 const overlay = document.getElementById('overlay');
-const lives = document.querySelector('.tries');
-const lostLife = document.querySelector('.lost');
+const lives = document.querySelectorAll('.tries');
+const lostLife = document.querySelectorAll('.lost');
 
 let missed = 0;
 let resetGame = 0;
@@ -108,7 +108,7 @@ function checkLetter(button) {
     gameReset();
  }
 }
-function lost() {
+function loss() {
   if (missed === 5) {
   overlay.className = 'lose';
   overlay.style.display = 'flex';
