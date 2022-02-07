@@ -13,7 +13,7 @@ let resetGame = 0;
 
 let phrases =  [
   "The only easy day was yesterday",
-  "Full stack vs Front-End Development",
+  "To do it all over again",
   "When we first met",
   "I remember it like it was yesterday",
   "Nothing like a hot summer day"
