@@ -4,6 +4,7 @@ const startGame = document.querySelector('.btn__reset');
 const overlay = document.getElementById('overlay');
 const lives = document.querySelectorAll('.tries');
 const lostLife = document.querySelectorAll('.lost');
+const title = document.querySelector('.title');
 
 let missed = 0;
 let resetGame = 0;
@@ -86,6 +87,7 @@ function checkLetter(button) {
       lost.src='images/lostHeart.png';
       lost.className = 'lost';
       missed++;
+      loss();
     }
     else {
       won();
